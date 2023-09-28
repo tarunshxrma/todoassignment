@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import './index.css'
+import Form from './Components/Form'
+import TodoList from './Components/TodoList'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const getLocalTodos = () => {
+  let localTodos = localStorage.getItem("todos")
+  if (localTodos) {
+    return JSON.parse(localStorage.getItem("todos"))
+  }
+  else {
+    return []
+  }
 }
 
-export default App;
+const App = () => {
+  const [inputText, setInputText] = useState("")
+  const [todos, setTodos] = useState(getLocalTodos())
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }, [todos])
+
+  return (
+    <>
+      <header>
+        <h1>TODO APP</h1>
+      </header>
+      <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} setTodos={setTodos} />
+    </>
+  )
+}
+
+export default App

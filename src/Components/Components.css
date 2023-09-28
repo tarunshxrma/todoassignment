@@ -1,0 +1,56 @@
+form{
+    margin-top: 3.5rem;
+}
+form input[type=text]{
+    width: 25rem;
+    height: 3rem;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.2rem;
+    outline: none;
+}
+.add-todo-btn{
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: -1.05rem;
+    cursor: pointer;
+}
+.remove-all-btn{
+    width: 8rem;
+    height: 3rem;
+    margin-top: 1rem;
+    margin-left: 50rem;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(25, 246, 47);
+    font-size: 1.2rem;
+}
+li{
+    width: 15rem;
+    height: 3rem;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: inline-block;
+    background: linear-gradient(to right, #159957, #155799);
+    overflow-wrap: break-word;
+}
+.completed-btn{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    margin-bottom: -0.7rem;
+    margin-left: 0.6rem;
+    margin-top: 2rem;
+}
+.delete-btn{
+    width: 2rem;
+    height: 1.8rem;
+    cursor: pointer;
+    margin-bottom: -0.53rem;
+    margin-left: 0.3rem;
+}
+.completed{
+    text-decoration: line-through;
+}
